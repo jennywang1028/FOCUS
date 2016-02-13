@@ -16,26 +16,26 @@ class TimerViewController: UIViewController {
     var sec = 60
     var timerOn = false
     
-    @IBOutlet weak var timerBtn: UIButton!
+    @IBOutlet weak var changeTimerBtn: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var chicken: UIButton!
+    @IBOutlet weak var startTimerBtn: UIButton!
+
     let timeInterval:NSTimeInterval = 1.0
     let timerEnd:NSTimeInterval = 10.0
     var timeCount:NSTimeInterval = 0.0
 
     //Set timer
-    @IBAction func timerPressed(sender: AnyObject) {
-        if timeCount != 120.0{
-            timeCount = timeCount + 1
-        }
-        else {
-            timeCount = 0
-        }
-        timerLabel.text = timeString(timeCount)
+    @IBAction func changeTimerBtnPressed(sender: AnyObject) {
+            if timeCount != 120.0{
+                timeCount = timeCount + 1
+            }
+            else {
+                timeCount = 0
+            }
+            timerLabel.text = timeString(timeCount)
     }
 
-    //Tap hen to start timer
-    @IBAction func chickenPressed(sender: AnyObject) {
+    @IBAction func startTimerBtnPressed(sender: AnyObject) {
         timer = NSTimer.scheduledTimerWithTimeInterval(timeInterval, target:self, selector: Selector("updateTimer"), userInfo: nil, repeats: true)
     }
     
