@@ -19,7 +19,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHw-ee-br8">
-                                <rect key="frame" x="281" y="285" width="38" height="30"/>
+                                <rect key="frame" x="221" y="549" width="158" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PHw-ee-br8" secondAttribute="height" multiplier="158:43" id="2I1-hx-4XB"/>
+                                    <constraint firstAttribute="height" constant="43" id="JJ6-fM-f4m"/>
+                                    <constraint firstAttribute="width" constant="158" id="bJA-TF-F40"/>
+                                </constraints>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dPP-Ws-wU6"/>
@@ -29,8 +34,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="PHw-ee-br8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iDH-vp-PAu"/>
-                            <constraint firstItem="PHw-ee-br8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zlG-Kx-4uA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PHw-ee-br8" secondAttribute="bottom" constant="8" id="7TK-Uq-XLE"/>
+                            <constraint firstItem="PHw-ee-br8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="usV-ht-cqi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GaP-uZ-ou6"/>
