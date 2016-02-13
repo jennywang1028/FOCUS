@@ -15,6 +15,10 @@
 		9615006E1C6FA6270019F7A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9615006C1C6FA6270019F7A7 /* LaunchScreen.storyboard */; };
 		961500791C6FA6270019F7A7 /* FOCUSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961500781C6FA6270019F7A7 /* FOCUSTests.swift */; };
 		961500841C6FA6270019F7A7 /* FOCUSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961500831C6FA6270019F7A7 /* FOCUSUITests.swift */; };
+		961500A41C6FBFF30019F7A7 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961500A11C6FBFF30019F7A7 /* FBSDKCoreKit.framework */; };
+		961500A51C6FBFF30019F7A7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961500A21C6FBFF30019F7A7 /* FBSDKLoginKit.framework */; };
+		961500A61C6FBFF30019F7A7 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961500A31C6FBFF30019F7A7 /* FBSDKShareKit.framework */; };
+		96241B8F1C6FD75E00171B9B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96241B8E1C6FD75E00171B9B /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,11 @@
 		9615007F1C6FA6270019F7A7 /* FOCUSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FOCUSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		961500831C6FA6270019F7A7 /* FOCUSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FOCUSUITests.swift; sourceTree = "<group>"; };
 		961500851C6FA6270019F7A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		961500A11C6FBFF30019F7A7 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		961500A21C6FBFF30019F7A7 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		961500A31C6FBFF30019F7A7 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		961500A81C6FD0B10019F7A7 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		96241B8E1C6FD75E00171B9B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +65,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				961500A51C6FBFF30019F7A7 /* FBSDKLoginKit.framework in Frameworks */,
+				961500A41C6FBFF30019F7A7 /* FBSDKCoreKit.framework in Frameworks */,
+				961500A61C6FBFF30019F7A7 /* FBSDKShareKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +91,9 @@
 		961500571C6FA6270019F7A7 = {
 			isa = PBXGroup;
 			children = (
+				961500A11C6FBFF30019F7A7 /* FBSDKCoreKit.framework */,
+				961500A21C6FBFF30019F7A7 /* FBSDKLoginKit.framework */,
+				961500A31C6FBFF30019F7A7 /* FBSDKShareKit.framework */,
 				961500621C6FA6270019F7A7 /* FOCUS */,
 				961500771C6FA6270019F7A7 /* FOCUSTests */,
 				961500821C6FA6270019F7A7 /* FOCUSUITests */,
@@ -106,6 +121,8 @@
 				9615006A1C6FA6270019F7A7 /* Assets.xcassets */,
 				9615006C1C6FA6270019F7A7 /* LaunchScreen.storyboard */,
 				9615006F1C6FA6270019F7A7 /* Info.plist */,
+				961500A81C6FD0B10019F7A7 /* Bridging-Header.h */,
+				96241B8E1C6FD75E00171B9B /* LoginViewController.swift */,
 			);
 			path = FOCUS;
 			sourceTree = "<group>";
@@ -259,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96241B8F1C6FD75E00171B9B /* LoginViewController.swift in Sources */,
 				961500661C6FA6270019F7A7 /* ViewController.swift in Sources */,
 				377838551C6FBB7500825E0D /* TimerViewController.swift in Sources */,
 				961500641C6FA6270019F7A7 /* AppDelegate.swift in Sources */,
@@ -401,10 +419,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = " /Users/jennyw/Documents/FacebookSDK";
 				INFOPLIST_FILE = FOCUS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jennywang.FOCUS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FOCUS/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -412,10 +432,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = " /Users/jennyw/Documents/FacebookSDK";
 				INFOPLIST_FILE = FOCUS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jennywang.FOCUS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FOCUS/Bridging-Header.h";
 			};
 			name = Release;
 		};

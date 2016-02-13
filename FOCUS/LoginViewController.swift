@@ -10,14 +10,10 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController , FBSDKLoginButtonDelegate {
     
-    @IBOutlet weak var login: UIButton!
-    
-    @IBAction func loginPressed(sender: AnyObject) {
-        
-    }
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         if (FBSDKAccessToken.currentAccessToken() == nil)
         {
