@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		377838551C6FBB7500825E0D /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377838541C6FBB7500825E0D /* TimerViewController.swift */; };
 		961500641C6FA6270019F7A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961500631C6FA6270019F7A7 /* AppDelegate.swift */; };
 		961500661C6FA6270019F7A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961500651C6FA6270019F7A7 /* ViewController.swift */; };
 		961500691C6FA6270019F7A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 961500671C6FA6270019F7A7 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		377838541C6FBB7500825E0D /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		961500601C6FA6270019F7A7 /* FOCUS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FOCUS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		961500631C6FA6270019F7A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		961500651C6FA6270019F7A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				961500631C6FA6270019F7A7 /* AppDelegate.swift */,
 				961500651C6FA6270019F7A7 /* ViewController.swift */,
+				377838541C6FBB7500825E0D /* TimerViewController.swift */,
 				961500671C6FA6270019F7A7 /* Main.storyboard */,
 				9615006A1C6FA6270019F7A7 /* Assets.xcassets */,
 				9615006C1C6FA6270019F7A7 /* LaunchScreen.storyboard */,
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				961500661C6FA6270019F7A7 /* ViewController.swift in Sources */,
+				377838551C6FBB7500825E0D /* TimerViewController.swift in Sources */,
 				961500641C6FA6270019F7A7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,6 +486,7 @@
 				9615008A1C6FA6270019F7A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9615008B1C6FA6270019F7A7 /* Build configuration list for PBXNativeTarget "FOCUSTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +495,7 @@
 				9615008D1C6FA6270019F7A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9615008E1C6FA6270019F7A7 /* Build configuration list for PBXNativeTarget "FOCUSUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +504,7 @@
 				961500901C6FA6270019F7A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
