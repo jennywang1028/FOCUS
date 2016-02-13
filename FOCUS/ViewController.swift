@@ -10,7 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController , FBSDKLoginButtonDelegate {
     
     @IBOutlet weak var login: UIButton!
     
