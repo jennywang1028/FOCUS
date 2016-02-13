@@ -10,7 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-class LoginViewController: UIViewController , FBSDKLoginButtonDelegate {
+class ViewController: UIViewController , FBSDKLoginButtonDelegate {
     
     override func viewDidLoad()
     {
