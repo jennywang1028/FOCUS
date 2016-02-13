@@ -41,7 +41,6 @@ class LoginViewController: UIViewController , FBSDKLoginButtonDelegate {
         if error == nil
         {
             print("Login complete.")
-            self.performSegueWithIdentifier("showNew", sender: self)
         }
         else if result.isCancelled{
             print("user cancelled")
