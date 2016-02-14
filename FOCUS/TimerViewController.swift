@@ -16,93 +16,88 @@ class TimerViewController: UIViewController {
     var sec = 60
     var timerOn = false
     
-    @IBOutlet weak var timerBtn: UIButton!
+    @IBOutlet weak var changeTimerBtn: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var chicken: UIButton!
+    @IBOutlet weak var timerImage: UIImageView!
+    
+    @IBOutlet weak var punishBtn: UIButton!
+    @IBAction func punishBtnPressed(sender: AnyObject) {
+    }
+
+
     let timeInterval:NSTimeInterval = 1.0
     let timerEnd:NSTimeInterval = 10.0
     var timeCount:NSTimeInterval = 0.0
+    var limit = 120.0*60 //sets limit for timer in seconds
+    var totalTime = 0.0 //sets total time
+    var isPlaying = false
 
-    //Set timer
-    @IBAction func timerPressed(sender: AnyObject) {
-        if timeCount != 120.0{
-            timeCount = timeCount + 1
-        }
-        else {
-            timeCount = 0
-        }
-        timerLabel.text = timeString(timeCount)
-    }
-
-    //Tap hen to start timer
-    @IBAction func chickenPressed(sender: AnyObject) {
-        timer = NSTimer.scheduledTimerWithTimeInterval(timeInterval, target:self, selector: Selector("updateTimer"), userInfo: nil, repeats: true)
-    }
-    
-    @IBAction func stopTimer(sender: UIButton) {
-        timer.invalidate()
-    }
-    
-    @IBAction func resetTimer(sender: UIButton) {
-        timer.invalidate()
-        timeCount = 0.0
-        timerLabel.text = timeString(timeCount)
-    }
-    
-    func timeString(time:NSTimeInterval) -> String {
-        let minutes = Int(time)
-        let seconds = Double(time)*60 % 60
-        return String(format:"%02i:%02i",minutes,Int(seconds))
-    }
-    
-    func updateTimer(timer:NSTimer){
-        //timerLabel.text = timer.userInfo as? String
-            //timer that counts down
-            timeCount = timeCount - timeInterval
-            if timeCount <= 0 {  //test for target time reached.
-                timerLabel.text = "0:00"
-                timer.invalidate()
-            } else { //update the time on the clock if not reached
-                timerLabel.text = timeString(timeCount)
-            }
-    }
-    
-    /*
-    func updateCounter() {
-        if timerOn == true{
-            min--
-            timerOn = false
-        }
-        sec--
-        if sec > 10 {
-            timerLabel.text = "\(min):\(sec)"
-        }
-        else if sec > 0{
-            timerLabel.text = "\(min):0\(sec)"
-        }
-        else if sec == 0 {
-            min--
-            timerLabel.text = "\(min):00"
-            sec = 60
-        }
-        else if min == 0 && sec == 0{
-            timer.invalidate()
-            sec = 60
-            min = 0
-            timerLabel.text = "\(min):00"
-        }
-    }
-    */
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        timerImage.image = UIImage(named: "egg1")
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //Set timer
+    @IBAction func changeTimerBtnPressed(sender: AnyObject) {
+        if isPlaying == false{
+            if timeCount != limit{
+                timeCount = timeCount + 60
+            }
+            else {
+                timeCount = 0
+            }
+            timerLabel.text = timeString(timeCount)
+            totalTime = timeCount
+        }
+    }
+    
+    //Tap hen to start timer
+    @IBAction func startTimerBtnPressed(sender: UIButton) {
+        isPlaying = true
+        timer = NSTimer.scheduledTimerWithTimeInterval(timeInterval, target:self, selector: Selector("updateTimer:"), userInfo: nil, repeats: true)
+    }
 
+    func stopTimer(sender: UIButton) {
+        timer.invalidate()
+    }
+    
+    func resetTimer(sender: UIButton) {
+        timer.invalidate()
+        timeCount = 0.0
+        timerLabel.text = timeString(timeCount)
+        timerImage.image = UIImage(named: "egg")
+    }
+    
+    func timeString(time:NSTimeInterval) -> String { //NSTimeInterval time represents time in seconds
+        let minutes = Int(time/60)
+        let seconds = Int(time%60)
+        return String(format:"%02i:%02i", minutes, seconds)
+    }
+
+    func updateTimer(timer: NSTimer){
+        timeCount = timeCount - timeInterval //returns # of seconds
+        if timeCount <= 0 {
+            timerImage.image = UIImage(named: "dragon")
+            timerLabel.text = "0:00"
+            timer.invalidate()
+        }
+        else { //update the time on the clock if not reached
+            if timeCount == 0.75*totalTime{
+                timerImage.image = UIImage(named: "egg2")
+            }
+            else if timeCount == 0.5*totalTime{
+                timerImage.image = UIImage(named: "egg3")
+            }
+            else if timeCount == 0.25*totalTime{
+                timerImage.image = UIImage(named: "egg4")
+            }
+            timerLabel.text = timeString(timeCount)
+        }
+    }
     
 }
