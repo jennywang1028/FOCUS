@@ -42,6 +42,11 @@ class TimerViewController: UIViewController {
     
     func appMovedToBackground() {
         print("App moved to background!")
+        timer.invalidate()
+        timeCount = 0.0
+        timerLabel.font = UIFont(name: "AvenirNext-Regular", size: 28)
+        timerLabel.text = "You killed your dragon! 😭"
+        timerImage.image = UIImage(named: "grave")
     }
     
     override func didReceiveMemoryWarning() {
