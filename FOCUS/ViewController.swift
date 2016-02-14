@@ -26,6 +26,7 @@ class ViewController: UIViewController , FBSDKLoginButtonDelegate {
         }
         else
         {
+            self.performSegueWithIdentifier("toTimer", sender: nil)
             //presentViewController(TimerViewController, animated: true, completion: nil)
         }
         
@@ -46,14 +47,14 @@ class ViewController: UIViewController , FBSDKLoginButtonDelegate {
             } else {
                 // If you ask for multiple permissions at once, you
                 // should check if specific permissions missing
-                }
+            }
             
         })
-        loginButton.center = self.view.center
+        loginButton.center = CGPoint(x : 195, y:600)
         loginButton.delegate = self
         self.view.addSubview(loginButton)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -63,13 +64,14 @@ class ViewController: UIViewController , FBSDKLoginButtonDelegate {
     {
         if error == nil
         {
-            print("Login complete.")
+            self.performSegueWithIdentifier("toTimer", sender: nil)
+            
         }
         else if result.isCancelled{
-            print("user cancelled")
+            //conversation box
         }
         else{
-            print(error.localizedDescription)
+            
         }
     }
     
