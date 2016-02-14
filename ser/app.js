@@ -5,21 +5,54 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-//
-var secret = require('./passwords')
 
-// Database
 var mongo = require('mongodb');
 var monk = require('monk');
-//var db = monk('localhost:27017/nodetest2');
-// second:
-var db = monk('localhost:27017/nodetest1', {
-  username : secret.un,
-  password : secret.pw
-});
+var util = require('util');
+var async = require('async');
+//var mongoose = require('mongoose');
+var secret = require('./passwords')
+var db = monk('mongodb://<dbuser>:<dbpassword>@ds061335.mongolab.com:61335/derp');
+/*
+////////////////////// Database
+// var mongo = require('mongodb');
+// //var monk = require('monk');
+// var util = require('util');
+// var async = require('async');
+// var mongoose = require('mongoose');
+// var Schema = mongoose.Schema;
+// // var uri = "mongodb://janezd:<dbpassword>@ds061335.mongolab.com:61335/derp"
+// //var db = monk('localhost:27017/nodetest2');
+// // second:
+// var database =  {
+//   url: "ds061335.mongolab.com:61335",
+//   name: "derp",
+//   user : secret.un,
+//   password : secret.pw
+// };
+// var loginCredentials = database.user + ":" + database.password;
+
+// var db = mongoose;
+
+// db.connect("mongodb://" + loginCredentials + "@" + database.url + "/" + database.name);
 
 
+// var lineSchema = {
+//   num: Number,
+//   pun: String
+// };
 
+// var Line = mongoose.model('Line', bookingSchema);
+
+// Line.find({}, function(err, lines) {
+//     async.each(bookings, booking, function(line, next) {
+//         console.log(util.format('yay something worked: %s', line.pun));
+//     }, function(err) {
+//         console.log('done reading records');
+//     });
+// });
+//////////////////////////////////////////
+*/
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
