@@ -18,53 +18,65 @@ class TimerViewController: UIViewController {
     
     @IBOutlet weak var changeTimerBtn: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var startTimerBtn: UIButton!
+    @IBOutlet weak var timerImage: UIImageView!
 
     let timeInterval:NSTimeInterval = 1.0
     let timerEnd:NSTimeInterval = 10.0
-    var timeCount:NSTimeInterval = 0.0
+    var timeCount:NSTimeInterval = 0.0 //time in seconds
+    var limit = 120.0*60 //sets limit for timer in seconds
+    var totalTime = 0.0 //sets total time
 
     //Set timer
     @IBAction func changeTimerBtnPressed(sender: AnyObject) {
-            if timeCount != 120.0{
-                timeCount = timeCount + 1
+            if timeCount != limit{
+                timeCount = timeCount + 60
             }
             else {
                 timeCount = 0
             }
             timerLabel.text = timeString(timeCount)
+            totalTime = timeCount
     }
 
-    @IBAction func startTimerBtnPressed(sender: AnyObject) {
-        timer = NSTimer.scheduledTimerWithTimeInterval(timeInterval, target:self, selector: Selector("updateTimer"), userInfo: nil, repeats: true)
+    @IBAction func startTimerBtnPressed(sender: UIButton) {
+        timer = NSTimer.scheduledTimerWithTimeInterval(timeInterval, target:self, selector: Selector("updateTimer:"), userInfo: nil, repeats: true)
     }
     
-    @IBAction func stopTimer(sender: UIButton) {
+   func stopTimer(sender: UIButton) {
         timer.invalidate()
     }
     
-    @IBAction func resetTimer(sender: UIButton) {
+    func resetTimer(sender: UIButton) {
         timer.invalidate()
         timeCount = 0.0
         timerLabel.text = timeString(timeCount)
     }
     
-    func timeString(time:NSTimeInterval) -> String {
-        let minutes = Int(time)
-        let seconds = Double(time)*60 % 60
-        return String(format:"%02i:%02i",minutes,Int(seconds))
+    func timeString(time:NSTimeInterval) -> String { //NSTimeInterval time represents time in seconds
+        let minutes = Int(time/60)
+        let seconds = Int(time%60)
+        return String(format:"%02i:%02i", minutes, seconds)
     }
     
-    func updateTimer(timer:NSTimer){
-        //timerLabel.text = timer.userInfo as? String
-            //timer that counts down
-            timeCount = timeCount - timeInterval
+    func updateTimer(timer: NSTimer){
+            timeCount = timeCount - timeInterval //returns # of seconds
             if timeCount <= 0 {  //test for target time reached.
+                timerImage.image = UIImage(named: "dragon")
                 timerLabel.text = "0:00"
                 timer.invalidate()
             } else { //update the time on the clock if not reached
+                if timeCount == 0.75*totalTime{
+                    timerImage.image = UIImage(named: "egg2")
+                }
+                else if timeCount == 0.5*totalTime{
+                    timerImage.image = UIImage(named: "egg3")
+                }
+                else if timeCount == 0.25*totalTime{
+                    timerImage.image = UIImage(named: "egg4")
+                }
                 timerLabel.text = timeString(timeCount)
             }
+        
     }
     
     /*
@@ -96,7 +108,7 @@ class TimerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        timerImage.image = UIImage(named: "egg")
     }
     
     override func didReceiveMemoryWarning() {
