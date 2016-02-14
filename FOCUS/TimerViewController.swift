@@ -16,6 +16,9 @@ class TimerViewController: UIViewController {
     var sec = 60
     var timerOn = false
     
+    var Time = 10
+    var timerN = NSTimer()
+    
     @IBOutlet weak var changeTimerBtn: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var timerImage: UIImageView!
@@ -35,12 +38,20 @@ class TimerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         timerImage.image = UIImage(named: "egg1")
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: "appMovedToBackground", name: UIApplicationWillResignActiveNotification, object: nil)
     }
     
     func appMovedToBackground() {
+            var Notification = UILocalNotification()
+            Notification.alertAction = "You should be punished! :("
+            Notification.alertBody = "You just killed your dragon!"
+            
+            Notification.fireDate = NSDate(timeIntervalSinceNow: 0)
+            
+            UIApplication.sharedApplication().scheduleLocalNotification(Notification)
         print("App moved to background!")
         timer.invalidate()
         timeCount = 0.0
