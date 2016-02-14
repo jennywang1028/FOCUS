@@ -12,11 +12,8 @@ import FBSDKLoginKit
 
 class ViewController: UIViewController , FBSDKLoginButtonDelegate {
     
-    @IBOutlet weak var login: UIButton!
+    @IBOutlet weak var loginBtn: FBSDKLoginButton!
     
-    @IBAction func loginPressed(sender: AnyObject) {
-        
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         if (FBSDKAccessToken.currentAccessToken() == nil)
@@ -31,7 +28,7 @@ class ViewController: UIViewController , FBSDKLoginButtonDelegate {
         }
         
         let loginButton = FBSDKLoginButton()
-        loginButton.readPermissions = ["public_profile", "email", "user_friends"]
+        loginBtn.readPermissions = ["public_profile", "email", "user_friends"]
         let flm = FBSDKLoginManager()
         flm.logInWithPublishPermissions(["publish_actions"], fromViewController: self, handler:{(result:FBSDKLoginManagerLoginResult!, error:NSError!) -> Void in
             if error != nil {
@@ -50,9 +47,9 @@ class ViewController: UIViewController , FBSDKLoginButtonDelegate {
             }
             
         })
-        loginButton.center = CGPoint(x : 195, y:600)
-        loginButton.delegate = self
-        self.view.addSubview(loginButton)
+//        loginButton.center = CGPoint(x : 195, y:600)
+//        loginButton.delegate = self
+//        self.view.addSubview(loginButton)
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,9 +66,6 @@ class ViewController: UIViewController , FBSDKLoginButtonDelegate {
         }
         else if result.isCancelled{
             //conversation box
-        }
-        else{
-            
         }
     }
     
