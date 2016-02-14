@@ -1,3 +1,4 @@
 *.sai
 
-data/
+ser/data/
+ser/node_modules/
