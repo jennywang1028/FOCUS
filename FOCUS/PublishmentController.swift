@@ -10,6 +10,8 @@ import Foundation
 
 class PublishmentController: UIViewController , UIPickerViewDelegate, UIPickerViewDataSource  {
     
+    var index = 0
+    
     @IBOutlet weak var pv: UIPickerView!
     
     var pickerData: [String] = [String]()
@@ -44,5 +46,14 @@ class PublishmentController: UIViewController , UIPickerViewDelegate, UIPickerVi
     // The data to return for the row and component (column) that's being passed in
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        index = row
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var secVc: TimerViewController = (segue.destinationViewController as? TimerViewController)!
+        secVc.rText = pickerData[index]
     }
 }

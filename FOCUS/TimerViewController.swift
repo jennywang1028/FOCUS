@@ -16,8 +16,7 @@ class TimerViewController: UIViewController {
     var sec = 60
     var timerOn = false
     
-    var Time = 10
-    var timerN = NSTimer()
+    var rText:String = ""
     
     @IBOutlet weak var changeTimerBtn: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
