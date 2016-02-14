@@ -1,11 +1,6 @@
 # FOCUS
 
-<<!DOCTYPE html>
-<html>
-<head>
-    <title>Focusing is fun</title>
-</head>
-<body>
-<p> Jane is kinda bored since everyone else is </p>
-</body>
-</html>
+
+###focusing is fun
+- it is fun
+- and so are jot notes
