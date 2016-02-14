@@ -26,15 +26,34 @@ class ViewController: UIViewController , FBSDKLoginButtonDelegate {
         }
         else
         {
-            print("Logged in..")
+            //presentViewController(TimerViewController, animated: true, completion: nil)
         }
         
         let loginButton = FBSDKLoginButton()
         loginButton.readPermissions = ["public_profile", "email", "user_friends"]
+        let flm = FBSDKLoginManager()
+        flm.logInWithPublishPermissions(["publish_actions"], fromViewController: self, handler:{(result:FBSDKLoginManagerLoginResult!, error:NSError!) -> Void in
+            if error != nil {
+                //According to Facebook:
+                //Errors will rarely occur in the typical login flow because the login dialog
+                //presented by Facebook via single sign on will guide the users to resolve any errors.
+                
+                // Process error
+                FBSDKLoginManager().logOut()
+            } else if result.isCancelled {
+                // Handle cancellations
+                FBSDKLoginManager().logOut()
+            } else {
+                // If you ask for multiple permissions at once, you
+                // should check if specific permissions missing
+                }
+            
+        })
         loginButton.center = self.view.center
         loginButton.delegate = self
         self.view.addSubview(loginButton)
     }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
