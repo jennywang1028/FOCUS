@@ -91,9 +91,19 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Usu-3G-yRh">
-                                <rect key="frame" x="20" y="532" width="560" height="53"/>
-                                <color key="backgroundColor" red="0.6489121109782483" green="0.98329775790562579" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaX-sz-vZ8">
+                                <rect key="frame" x="20" y="449" width="560" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="4er-cH-JI1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="63"/>
+                                <connections>
+                                    <action selector="changeTimerBtnPressed:" destination="UQn-TZ-DoI" eventType="touchUpInside" id="JA2-Au-vYk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Usu-3G-yRh">
+                                <rect key="frame" x="128" y="529" width="345" height="51"/>
+                                <color key="backgroundColor" red="0.15294117647058825" green="0.79607843137254897" blue="0.18823529411764706" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="560" id="S2J-Lb-R7c"/>
                                     <constraint firstAttribute="height" constant="53" id="Vj1-Jk-nM3"/>
@@ -106,16 +116,6 @@
                                 <connections>
                                     <action selector="punishBtnPressed:" destination="UQn-TZ-DoI" eventType="touchUpInside" id="o7s-et-Bin"/>
                                     <segue destination="p3N-OF-1MW" kind="presentation" id="CwW-sB-5CG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaX-sz-vZ8">
-                                <rect key="frame" x="20" y="449" width="560" height="85"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="85" id="4er-cH-JI1"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="63"/>
-                                <connections>
-                                    <action selector="changeTimerBtnPressed:" destination="UQn-TZ-DoI" eventType="touchUpInside" id="JA2-Au-vYk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -190,19 +190,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="619" height="740"/>
                             </imageView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9C-XP-f7f">
-                                <rect key="frame" x="0.0" y="97" width="600" height="313"/>
+                                <rect key="frame" x="0.0" y="114" width="600" height="313"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="313" id="NIR-Hc-ppI"/>
                                     <constraint firstAttribute="width" constant="600" id="Wxy-8g-fGz"/>
                                     <constraint firstAttribute="width" secondItem="d9C-XP-f7f" secondAttribute="height" multiplier="600:313" id="bGZ-4k-Dss"/>
                                 </constraints>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTY-9D-mZO">
-                                <rect key="frame" x="104" y="510" width="392" height="70"/>
-                                <color key="backgroundColor" red="0.64891211100000001" green="0.98329775789999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTY-9D-mZO">
+                                <rect key="frame" x="140" y="537" width="321" height="43"/>
+                                <color key="backgroundColor" red="0.15294117647058825" green="0.79607843137254897" blue="0.18823529411764706" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="560" id="6hs-AF-r2g"/>
-                                    <constraint firstAttribute="height" constant="70" id="87l-Hj-ORO"/>
+                                    <constraint firstAttribute="height" constant="53" id="87l-Hj-ORO"/>
                                     <constraint firstAttribute="width" secondItem="fTY-9D-mZO" secondAttribute="height" multiplier="28:5" id="d3s-qb-hhH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
@@ -212,6 +212,10 @@
                                 <connections>
                                     <segue destination="Nnf-1g-k09" kind="unwind" unwindAction="unwindToTimerVC:" id="rAh-6O-bPI"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T16-aF-Blm">
+                                <rect key="frame" x="274" y="477" width="53" height="30"/>
+                                <state key="normal" title="Refresh"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

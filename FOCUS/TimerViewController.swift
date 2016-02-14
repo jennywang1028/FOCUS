@@ -59,6 +59,20 @@ class TimerViewController: UIViewController {
         timerLabel.text = "You killed your dragon! 😭"
         timerImage.image = UIImage(named: "grave")
         NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(3), target: self, selector: "resetTimer:", userInfo: nil, repeats: false)
+        
+       //share button
+        let content : FBSDKShareLinkContent = FBSDKShareLinkContent()
+        
+        content.contentURL = NSURL(string: rText)
+        content.contentTitle = "I SHOULD BE STUDYING"
+        content.contentDescription = "INSTEAD I KILLED A DRAGON"
+        content.imageURL = NSURL(string: rText)
+        
+        let button : FBSDKShareButton = FBSDKShareButton()
+        button.shareContent = content
+        button.center = CGPoint(x : 195, y:100)
+        self.view.addSubview(button)
+        
 
     }
     
