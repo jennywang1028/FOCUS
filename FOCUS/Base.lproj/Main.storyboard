@@ -78,7 +78,7 @@
                                 </constraints>
                                 <state key="normal" title="Hen" image="hen"/>
                                 <connections>
-                                    <action selector="chickenPressed:" destination="UQn-TZ-DoI" eventType="touchUpInside" id="ccf-g3-gFg"/>
+                                    <action selector="startTimerBtnPressed:" destination="UQn-TZ-DoI" eventType="touchUpInside" id="Dzn-Wy-IXV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaX-sz-vZ8">
@@ -90,7 +90,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="63"/>
                                 <connections>
-                                    <action selector="timerPressed:" destination="UQn-TZ-DoI" eventType="touchUpInside" id="8KW-Hp-7fX"/>
+                                    <action selector="changeTimerBtnPressed:" destination="UQn-TZ-DoI" eventType="touchUpInside" id="NO0-0G-iy3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -105,8 +105,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="chicken" destination="ojr-ab-ige" id="zkz-Nv-m6K"/>
-                        <outlet property="timerBtn" destination="qaX-sz-vZ8" id="MR0-GB-v6k"/>
+                        <outlet property="changeTimerBtn" destination="qaX-sz-vZ8" id="Kae-lt-ELo"/>
+                        <outlet property="startTimerBtn" destination="ojr-ab-ige" id="ffO-h6-PBM"/>
                         <outlet property="timerLabel" destination="kJf-gc-YKG" id="5tw-IA-9t9"/>
                     </connections>
                 </viewController>
