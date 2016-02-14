@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		377838551C6FBB7500825E0D /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377838541C6FBB7500825E0D /* TimerViewController.swift */; };
-		3778385F1C6FF7F400825E0D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3778385C1C6FF7F400825E0D /* FBSDKCoreKit.framework */; };
-		377838601C6FF7F400825E0D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3778385D1C6FF7F400825E0D /* FBSDKLoginKit.framework */; };
-		377838611C6FF7F400825E0D /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3778385E1C6FF7F400825E0D /* FBSDKShareKit.framework */; };
+		377838591C6FE95700825E0D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377838561C6FE95700825E0D /* FBSDKCoreKit.framework */; };
+		3778385A1C6FE95700825E0D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377838571C6FE95700825E0D /* FBSDKLoginKit.framework */; };
+		3778385B1C6FE95700825E0D /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377838581C6FE95700825E0D /* FBSDKShareKit.framework */; };
 		961500641C6FA6270019F7A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961500631C6FA6270019F7A7 /* AppDelegate.swift */; };
 		961500661C6FA6270019F7A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961500651C6FA6270019F7A7 /* ViewController.swift */; };
 		961500691C6FA6270019F7A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 961500671C6FA6270019F7A7 /* Main.storyboard */; };
@@ -45,9 +45,9 @@
 
 /* Begin PBXFileReference section */
 		377838541C6FBB7500825E0D /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
-		3778385C1C6FF7F400825E0D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		3778385D1C6FF7F400825E0D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		3778385E1C6FF7F400825E0D /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		377838561C6FE95700825E0D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		377838571C6FE95700825E0D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		377838581C6FE95700825E0D /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		961500601C6FA6270019F7A7 /* FOCUS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FOCUS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		961500631C6FA6270019F7A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		961500651C6FA6270019F7A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,9 +76,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				961500A51C6FBFF30019F7A7 /* FBSDKLoginKit.framework in Frameworks */,
-				3778385F1C6FF7F400825E0D /* FBSDKCoreKit.framework in Frameworks */,
-				377838611C6FF7F400825E0D /* FBSDKShareKit.framework in Frameworks */,
-				377838601C6FF7F400825E0D /* FBSDKLoginKit.framework in Frameworks */,
+				377838591C6FE95700825E0D /* FBSDKCoreKit.framework in Frameworks */,
+				3778385B1C6FE95700825E0D /* FBSDKShareKit.framework in Frameworks */,
+				3778385A1C6FE95700825E0D /* FBSDKLoginKit.framework in Frameworks */,
 				961500A41C6FBFF30019F7A7 /* FBSDKCoreKit.framework in Frameworks */,
 				961500A61C6FBFF30019F7A7 /* FBSDKShareKit.framework in Frameworks */,
 			);
@@ -107,9 +107,9 @@
 				961500A11C6FBFF30019F7A7 /* FBSDKCoreKit.framework */,
 				961500A21C6FBFF30019F7A7 /* FBSDKLoginKit.framework */,
 				961500A31C6FBFF30019F7A7 /* FBSDKShareKit.framework */,
-				3778385C1C6FF7F400825E0D /* FBSDKCoreKit.framework */,
-				3778385D1C6FF7F400825E0D /* FBSDKLoginKit.framework */,
-				3778385E1C6FF7F400825E0D /* FBSDKShareKit.framework */,
+				377838561C6FE95700825E0D /* FBSDKCoreKit.framework */,
+				377838571C6FE95700825E0D /* FBSDKLoginKit.framework */,
+				377838581C6FE95700825E0D /* FBSDKShareKit.framework */,
 				961500621C6FA6270019F7A7 /* FOCUS */,
 				961500771C6FA6270019F7A7 /* FOCUSTests */,
 				961500821C6FA6270019F7A7 /* FOCUSUITests */,
