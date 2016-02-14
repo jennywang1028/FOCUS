@@ -219,6 +219,7 @@
 				TargetAttributes = {
 					9615005F1C6FA6270019F7A7 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 8GL6EU69CY;
 					};
 					961500731C6FA6270019F7A7 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -427,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					/Users/jennyw/Documents/FacebookSDK,
 					"$(PROJECT_DIR)",
@@ -443,6 +445,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					/Users/jennyw/Documents/FacebookSDK,
 					"$(PROJECT_DIR)",

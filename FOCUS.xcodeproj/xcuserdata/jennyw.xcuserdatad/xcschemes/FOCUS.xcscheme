@@ -20,6 +20,34 @@
                ReferencedContainer = "container:FOCUS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "961500731C6FA6270019F7A7"
+               BuildableName = "FOCUSTests.xctest"
+               BlueprintName = "FOCUSTests"
+               ReferencedContainer = "container:FOCUS.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9615007E1C6FA6270019F7A7"
+               BuildableName = "FOCUSUITests.xctest"
+               BlueprintName = "FOCUSUITests"
+               ReferencedContainer = "container:FOCUS.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -28,26 +56,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "961500731C6FA6270019F7A7"
-               BuildableName = "FOCUSTests.xctest"
-               BlueprintName = "FOCUSTests"
-               ReferencedContainer = "container:FOCUS.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9615007E1C6FA6270019F7A7"
-               BuildableName = "FOCUSUITests.xctest"
-               BlueprintName = "FOCUSUITests"
-               ReferencedContainer = "container:FOCUS.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
@@ -106,6 +114,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "FOCUS"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

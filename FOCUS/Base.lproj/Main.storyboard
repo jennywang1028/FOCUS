@@ -102,7 +102,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Usu-3G-yRh">
-                                <rect key="frame" x="128" y="529" width="345" height="51"/>
+                                <rect key="frame" x="128" y="520" width="345" height="51"/>
                                 <color key="backgroundColor" red="0.15294117647058825" green="0.79607843137254897" blue="0.18823529411764706" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="560" id="S2J-Lb-R7c"/>

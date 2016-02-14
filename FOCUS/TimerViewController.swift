@@ -10,6 +10,8 @@ import UIKit
 
 class TimerViewController: UIViewController {
     
+ 
+    
     var timer = NSTimer()
     var counter = 0
     //var min = 0
@@ -17,6 +19,7 @@ class TimerViewController: UIViewController {
     var timerOn = false
     
     var rText:String = ""
+    
     
     @IBOutlet weak var changeTimerBtn: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
@@ -34,12 +37,16 @@ class TimerViewController: UIViewController {
     var isPlaying = false
     var timerSelected = false
     var punishSelected = false
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: "appMovedToBackground", name: UIApplicationWillResignActiveNotification, object: nil)
         notificationCenter.addObserver(self, selector: "appMovedToForeground", name: UIApplicationWillEnterForegroundNotification, object: nil)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.view.setNeedsDisplay()
     }
     
     func appMovedToBackground() {
@@ -58,11 +65,14 @@ class TimerViewController: UIViewController {
         timerLabel.font = UIFont(name: "AvenirNext-Regular", size: 28)
         timerLabel.text = "You killed your dragon! 😭"
         timerImage.image = UIImage(named: "grave")
+        //resetTimer(timer)
         NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(3), target: self, selector: "resetTimer:", userInfo: nil, repeats: false)
         
        //share button
         let content : FBSDKShareLinkContent = FBSDKShareLinkContent()
-        
+        timerSelected = false
+        punishSelected = false
+        isPlaying = false
         content.contentURL = NSURL(string: rText)
         content.contentTitle = "I SHOULD BE STUDYING"
         content.contentDescription = "INSTEAD I KILLED A DRAGON"
@@ -72,9 +82,8 @@ class TimerViewController: UIViewController {
         button.shareContent = content
         button.center = CGPoint(x : 195, y:100)
         self.view.addSubview(button)
-        
-
-    }
+        }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -100,7 +109,6 @@ class TimerViewController: UIViewController {
     @IBAction func startTimerBtnPressed(sender: UIButton) {
         isPlaying = true
         timer = NSTimer.scheduledTimerWithTimeInterval(timeInterval, target:self, selector: Selector("updateTimer:"), userInfo: nil, repeats: true)
-        print("another timer should be called")
     }
 
     func stopTimer(sender: UIButton) {
@@ -128,7 +136,11 @@ class TimerViewController: UIViewController {
             if timeCount <= 0 {
                 timerImage.image = UIImage(named: "dragon")
                 timerLabel.text = "0:00"
+              // resetTimer(timer)
                 timer.invalidate()
+                timerSelected = false
+                punishSelected = false
+                isPlaying = false
             }
             else { //update the time on the clock if not reached
                 if timeCount == 0.75*totalTime{
