@@ -24,17 +24,24 @@ class TimerViewController: UIViewController {
     @IBAction func punishBtnPressed(sender: AnyObject) {
     }
 
-
     let timeInterval:NSTimeInterval = 1.0
     let timerEnd:NSTimeInterval = 10.0
     var timeCount:NSTimeInterval = 0.0
     var limit = 120.0*60 //sets limit for timer in seconds
     var totalTime = 0.0 //sets total time
     var isPlaying = false
+    var timerSelected = false
+    var punishSelected = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         timerImage.image = UIImage(named: "egg1")
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self, selector: "appMovedToBackground", name: UIApplicationWillResignActiveNotification, object: nil)
+    }
+    
+    func appMovedToBackground() {
+        print("App moved to background!")
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,6 +60,7 @@ class TimerViewController: UIViewController {
             }
             timerLabel.text = timeString(timeCount)
             totalTime = timeCount
+            timerSelected = true
         }
     }
     
@@ -80,24 +88,30 @@ class TimerViewController: UIViewController {
     }
 
     func updateTimer(timer: NSTimer){
-        timeCount = timeCount - timeInterval //returns # of seconds
-        if timeCount <= 0 {
-            timerImage.image = UIImage(named: "dragon")
-            timerLabel.text = "0:00"
-            timer.invalidate()
+        if timerSelected == true && punishSelected == true {
+            timeCount = timeCount - timeInterval //returns # of seconds
+            if timeCount <= 0 {
+                timerImage.image = UIImage(named: "dragon")
+                timerLabel.text = "0:00"
+                timer.invalidate()
+            }
+            else { //update the time on the clock if not reached
+                if timeCount == 0.75*totalTime{
+                    timerImage.image = UIImage(named: "egg2")
+                }
+                else if timeCount == 0.5*totalTime{
+                    timerImage.image = UIImage(named: "egg3")
+                }
+                else if timeCount == 0.25*totalTime{
+                    timerImage.image = UIImage(named: "egg4")
+                }
+                timerLabel.text = timeString(timeCount)
+            }
         }
-        else { //update the time on the clock if not reached
-            if timeCount == 0.75*totalTime{
-                timerImage.image = UIImage(named: "egg2")
-            }
-            else if timeCount == 0.5*totalTime{
-                timerImage.image = UIImage(named: "egg3")
-            }
-            else if timeCount == 0.25*totalTime{
-                timerImage.image = UIImage(named: "egg4")
-            }
-            timerLabel.text = timeString(timeCount)
-        }
+    }
+    
+    @IBAction func unwindToTimerVC(sender: UIStoryboardSegue) {
+        punishSelected = true
     }
     
 }
