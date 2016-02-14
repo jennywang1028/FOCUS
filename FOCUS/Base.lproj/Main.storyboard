@@ -17,31 +17,9 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHw-ee-br8">
-                                <rect key="frame" x="221" y="549" width="158" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="PHw-ee-br8" secondAttribute="height" multiplier="158:43" id="2I1-hx-4XB"/>
-                                    <constraint firstAttribute="height" constant="43" id="JJ6-fM-f4m"/>
-                                    <constraint firstAttribute="width" constant="158" id="bJA-TF-F40"/>
-                                </constraints>
-                                <state key="normal" title="Login"/>
-                                <connections>
-                                    <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dPP-Ws-wU6"/>
-                                    <segue destination="UQn-TZ-DoI" kind="show" id="vT3-fn-Aoe"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PHw-ee-br8" secondAttribute="bottom" constant="8" id="7TK-Uq-XLE"/>
-                            <constraint firstItem="PHw-ee-br8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="usV-ht-cqi"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GaP-uZ-ou6"/>
-                    <connections>
-                        <outlet property="login" destination="PHw-ee-br8" id="Qtu-lm-rhX"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,6 +86,7 @@
                         <outlet property="chicken" destination="ojr-ab-ige" id="zkz-Nv-m6K"/>
                         <outlet property="timerBtn" destination="qaX-sz-vZ8" id="MR0-GB-v6k"/>
                         <outlet property="timerLabel" destination="kJf-gc-YKG" id="5tw-IA-9t9"/>
+                        <segue destination="p3N-OF-1MW" kind="presentation" identifier="toP" id="GLT-uS-MbV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O5d-Gf-rBe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -145,11 +124,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTY-9D-mZO">
-                                <rect key="frame" x="235" y="470" width="130" height="30"/>
+                                <rect key="frame" x="235" y="468" width="130" height="30"/>
                                 <state key="normal" title="Challenge Accpted"/>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d9C-XP-f7f">
-                                <rect key="frame" x="-26" y="86" width="600" height="313"/>
+                                <rect key="frame" x="-8" y="143" width="600" height="313"/>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -157,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cMc-r1-LVa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2451" y="-368"/>
+            <point key="canvasLocation" x="2540" y="-368"/>
         </scene>
     </scenes>
     <resources>
