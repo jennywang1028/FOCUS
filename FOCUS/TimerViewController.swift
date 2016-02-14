@@ -50,16 +50,18 @@ class TimerViewController: UIViewController {
     }
     
     func appMovedToBackground() {
+        if isPlaying && timerSelected && punishSelected{
         var Notification = UILocalNotification()
         Notification.alertAction = "You should be punished! :("
         Notification.alertBody = "You just killed your dragon!"
         Notification.fireDate = NSDate(timeIntervalSinceNow: 0)
         UIApplication.sharedApplication().scheduleLocalNotification(Notification)
+        }
         
-        print("App moved to background!")
         
     }
     func appMovedToForeground() {
+        if isPlaying && timerSelected && punishSelected{
         timer.invalidate()
         timeCount = 0.0
         timerLabel.font = UIFont(name: "AvenirNext-Regular", size: 28)
@@ -83,6 +85,7 @@ class TimerViewController: UIViewController {
         button.center = CGPoint(x : 195, y:100)
         self.view.addSubview(button)
         }
+    }
     
     
     override func didReceiveMemoryWarning() {
