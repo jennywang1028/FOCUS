@@ -2,3 +2,5 @@
 
 ser/data/
 ser/node_modules/
+
+/passwords.js
