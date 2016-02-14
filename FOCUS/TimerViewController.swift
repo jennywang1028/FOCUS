@@ -38,26 +38,29 @@ class TimerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        timerImage.image = UIImage(named: "egg1")
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: "appMovedToBackground", name: UIApplicationWillResignActiveNotification, object: nil)
+        notificationCenter.addObserver(self, selector: "appMovedToForeground", name: UIApplicationWillEnterForegroundNotification, object: nil)
     }
     
     func appMovedToBackground() {
-            var Notification = UILocalNotification()
-            Notification.alertAction = "You should be punished! :("
-            Notification.alertBody = "You just killed your dragon!"
-            
-            Notification.fireDate = NSDate(timeIntervalSinceNow: 0)
-            
-            UIApplication.sharedApplication().scheduleLocalNotification(Notification)
+        var Notification = UILocalNotification()
+        Notification.alertAction = "You should be punished! :("
+        Notification.alertBody = "You just killed your dragon!"
+        Notification.fireDate = NSDate(timeIntervalSinceNow: 0)
+        UIApplication.sharedApplication().scheduleLocalNotification(Notification)
+        
         print("App moved to background!")
+        
+    }
+    func appMovedToForeground() {
         timer.invalidate()
         timeCount = 0.0
         timerLabel.font = UIFont(name: "AvenirNext-Regular", size: 28)
         timerLabel.text = "You killed your dragon! 😭"
         timerImage.image = UIImage(named: "grave")
+        NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(3), target: self, selector: "resetTimer:", userInfo: nil, repeats: false)
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -84,17 +87,20 @@ class TimerViewController: UIViewController {
     @IBAction func startTimerBtnPressed(sender: UIButton) {
         isPlaying = true
         timer = NSTimer.scheduledTimerWithTimeInterval(timeInterval, target:self, selector: Selector("updateTimer:"), userInfo: nil, repeats: true)
+        print("another timer should be called")
     }
 
     func stopTimer(sender: UIButton) {
         timer.invalidate()
     }
     
-    func resetTimer(sender: UIButton) {
+    //PRO: WHEN KILL DRAGON & RESTART TIMER, CLICKING ON TIMER DOESN'T WORK ANYMORE???!!!
+    func resetTimer(timer2: NSTimer) {
         timer.invalidate()
+        timerLabel.font = UIFont(name: "AvenirNext-Regular", size: 63)
         timeCount = 0.0
         timerLabel.text = timeString(timeCount)
-        timerImage.image = UIImage(named: "egg")
+        timerImage.image = UIImage(named: "egg1")
     }
     
     func timeString(time:NSTimeInterval) -> String { //NSTimeInterval time represents time in seconds
