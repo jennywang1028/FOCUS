@@ -76,9 +76,9 @@
                                     <constraint firstAttribute="height" constant="295" id="dFK-9X-JDs"/>
                                     <constraint firstAttribute="width" constant="290" id="yop-qk-Wly"/>
                                 </constraints>
-                                <state key="normal" title="Hen"/>
+                                <state key="normal" title="Hen" image="hen"/>
                                 <connections>
-                                    <action selector="startTimerBtnPressed:" destination="UQn-TZ-DoI" eventType="touchUpInside" id="0iN-7H-gzY"/>
+                                    <action selector="startTimerBtnPressed:" destination="UQn-TZ-DoI" eventType="touchUpInside" id="Dzn-Wy-IXV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaX-sz-vZ8">
@@ -93,22 +93,12 @@
                                     <action selector="changeTimerBtnPressed:" destination="UQn-TZ-DoI" eventType="touchUpInside" id="NO0-0G-iy3"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l0l-Oh-aLS">
-                                <rect key="frame" x="155" y="133" width="290" height="295"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="290" id="2cX-C0-PnK"/>
-                                    <constraint firstAttribute="width" secondItem="l0l-Oh-aLS" secondAttribute="height" multiplier="58:59" id="DOD-sO-bGa"/>
-                                    <constraint firstAttribute="height" constant="295" id="NS2-wx-z8n"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qaX-sz-vZ8" firstAttribute="top" secondItem="l0l-Oh-aLS" secondAttribute="bottom" constant="8" id="1jO-mS-7UK"/>
                             <constraint firstItem="ojr-ab-ige" firstAttribute="top" secondItem="1pW-aJ-gAv" secondAttribute="bottom" constant="69" id="75v-gg-zKj"/>
                             <constraint firstItem="qaX-sz-vZ8" firstAttribute="top" secondItem="ojr-ab-ige" secondAttribute="bottom" constant="8" id="7Eb-SF-Eny"/>
                             <constraint firstItem="qaX-sz-vZ8" firstAttribute="centerX" secondItem="ojr-ab-ige" secondAttribute="centerX" id="CyR-LB-O9b"/>
-                            <constraint firstItem="qaX-sz-vZ8" firstAttribute="centerX" secondItem="l0l-Oh-aLS" secondAttribute="centerX" id="Dgo-2J-kJs"/>
                             <constraint firstItem="kJf-gc-YKG" firstAttribute="top" secondItem="ojr-ab-ige" secondAttribute="bottom" constant="8" id="Iso-f1-7nf"/>
                             <constraint firstItem="ojr-ab-ige" firstAttribute="centerX" secondItem="4pi-1Y-HaD" secondAttribute="centerX" id="Y4p-I2-Cvm"/>
                             <constraint firstItem="kJf-gc-YKG" firstAttribute="centerX" secondItem="ojr-ab-ige" secondAttribute="centerX" id="lql-wG-Fwm"/>
@@ -116,7 +106,7 @@
                     </view>
                     <connections>
                         <outlet property="changeTimerBtn" destination="qaX-sz-vZ8" id="Kae-lt-ELo"/>
-                        <outlet property="timerImage" destination="l0l-Oh-aLS" id="9ct-kM-J8z"/>
+                        <outlet property="startTimerBtn" destination="ojr-ab-ige" id="ffO-h6-PBM"/>
                         <outlet property="timerLabel" destination="kJf-gc-YKG" id="5tw-IA-9t9"/>
                     </connections>
                 </viewController>
@@ -170,4 +160,7 @@
             <point key="canvasLocation" x="2451" y="-368"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hen" width="416" height="550"/>
+    </resources>
 </document>
